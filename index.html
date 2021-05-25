@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header-page">
+        <div class="container">
+            <a class="link header-page__link" href="index.html">Pomodoro App</a>
+            <nav class="menu-desktop">
+                <ul>
+                    <li class="menu-desktop__space-links"><a class="menu-desktop__link link" href="#Timer">Timer</a></li>
+                    <li class="menu-desktop__space-links"><a class="menu-desktop__link link" href="#Sobre">Sobre</a></li>
+                    <li class="menu-desktop__space-links"><a class="menu-desktop__link link" href="#Contato">Contato</a></li>
+                </ul>
+            </nav><!--menu-desktop-->
+
+            <nav class="menu-mobile">
+                <button id="btnMenu" aria-label="Abrir Menu" aria-haspopup="true" aria-expanded="false" aria-controls="menu" class="menu-mobile__btn"></button><!--menu-mobile__btn-->
+                <ul id="menu" role="menu" class="menu-mobile__menu">
+                    <li class="menu-mobile__space-links"><a class="link" href="#Timer">Timer</a></li>
+                    <li class="menu-mobile__space-links"><a class="link" href="#Sobre">Sobre</a></li>
+                    <li class="menu-mobile__space-links"><a class="link" href="#Contato">Contato</a></li>
+                </ul><!--menu-mobile__menu-->
+            </nav><!--menu-mobile-->
+        </div><!--container-->
+    </header><!--header-page-->
+
+    <script src="./app/functions/index.js" type="module"></script>
+</body>
+</html>
