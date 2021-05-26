@@ -32,6 +32,28 @@
         </div><!--container-->
     </header><!--header-page-->
 
-    <script src="./app/functions/index.js" type="module"></script>
+    <section class="app container">
+        <button class="app__btn app_btn--edit">
+            Bloco de notas
+            <img src="./assets/svg/edit.svg" alt="Editar" />
+        </button><!--app__btn-->
+
+        <div class="app__timer">
+            <main class="app_timer__box">
+                <h3 class="app__sections">Sessão 1</h3>
+                <span class="app__coutdown">29:35</span>
+                <button class="app__btn">
+                    <img src="./assets/svg/play.svg" alt="Começar" />
+                    Começar
+                </button>
+                <button class="app__btn">
+                    <img src="./assets/svg/replay.svg" alt="Recomeçar" />
+                    Resetar
+                </button>
+            </main><!--app_timer__box-->
+        </div><!--app__timer-->
+    </section><!--app-->
+
+    <script type="module" src="./app/functions/index.js"></script>
 </body>
 </html>

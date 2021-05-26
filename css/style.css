@@ -65,8 +65,75 @@ ul {
     color: var(--color-cian-light);
 }
 
+.app {
+    width: 100%;
+    padding: 48px 4%;
+    text-align: center;
+    position: relative;
+}
+
+.app__timer {
+    /*31.25rem*/
+    width: 31.25rem;
+    height: 31.25rem;
+    border: 2px solid var(--color-cian-light);
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 60px 0 #2cb0bf3f;
+    margin-top: 48px;
+    color: var(--color-white);
+    position: relative;
+}
+
+.app_timer__box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.app__sections {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.app__btn {
+    width: 160px;
+    height: 42px;
+    margin: 16px 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--color-white);
+    font-size: 1.65rem;
+    border: 0;
+}
+
+.app__coutdown {
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: block;
+    margin: 24px 0;
+}
+
+.app_btn--edit {
+    width: 260px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 
 @media (max-width: 520px) {
+    :root {
+        font-size: 12px;
+    }
+
     .menu-desktop {
         display: none;
     }
@@ -91,9 +158,9 @@ ul {
     }
 
     .menu-mobile__menu--active {
-        height: calc(100vh - 75vh);
+        height: 200px;
         visibility: visible;
-        overflow-y: auto;
+        /*overflow-y: auto;*/
     }
 
     .menu-mobile__btn {
@@ -142,5 +209,51 @@ ul {
 
     .menu-mobile__space-links > .link {
         text-decoration: none;
+    }
+
+    .app_btn--edit {
+        width: 200px;
+    }
+
+    
+    .app__btn {
+        margin: 8px 0;
+    }
+}
+
+@media (max-width: 420px) {
+    :root {
+        font-size: 10px;
+    }
+
+    .app__timer {
+        width: 28rem;
+        height: 28rem;
+    }
+
+    .app__btn {
+        margin: 0;
+    }
+
+    .app__coutdown {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 378px) {
+    :root {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .app__timer {
+        width: 100%;
+        max-width: 28rem;
+    }
+
+    .app__coutdown {
+        font-size: 2rem;
+        margin: 16px 0;
     }
 }
