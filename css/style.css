@@ -7,6 +7,7 @@
     --color-cian-dark: #025373;
     --color-cian: #1C8DA6;
     --color-cian-light: #2CB1BF;
+    --color-yellow: #E1B000;
     --color-black: #011126;
     --color-white: #FFFF;
 }
@@ -32,6 +33,17 @@ ul {
 .link {
     font-size: 20px;
     color: var(--color-white);
+}
+
+.title {
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin: 24px 0;
+}
+
+.content {
+    font-size: 1.5rem;
+    margin: 16px 0;
 }
 
 .header-page {
@@ -110,7 +122,7 @@ ul {
     cursor: pointer;
     background-color: transparent;
     color: var(--color-white);
-    font-size: 1.65rem;
+    font-size: 1.75rem;
     border: 0;
 }
 
@@ -188,6 +200,55 @@ ul {
     width: 3px;
     height: 160px;
     border-right: 3px solid var(--color-cian);
+}
+
+.pomo-explain {
+    width: 100%;
+    padding: 48px 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-white);
+}
+
+.pomo-technique {
+    width: 100%;
+    padding: 48px 2%;
+    color: var(--color-white);
+    background-color: var(--color-blue-dark);
+}
+
+.pomo-technique > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.pomo-explain__description, .pomo-technique__description {
+    width: 100%;
+    max-width: 700px;
+}
+
+.pomo-explain__img, .pomo-technique__img {
+    width: 100%;
+    max-width: 450px;
+}
+
+.important-explain {
+    width: 100%;
+    max-width: 800px;
+    margin: 48px auto;
+    padding: 24px 2%;
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.important-explain__description {
+    text-align: justify;
+    padding: 0 4%;
 }
 
 @media (max-width: 520px) {
