@@ -54,6 +54,22 @@ ul {
     border: 2px solid var(--color-cian-light);
 }
 
+.bg-black {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.8s linear, opacity 0.5s linear;
+}
+
+.bg-black--active {
+    visibility: visible;
+    opacity: 1;
+}
+
 .header-page {
     width: 100%;
     padding: 24px 4%;
@@ -64,6 +80,12 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.header-page__link {
+    font-size: 20px;
+    color: var(--color-white);
+    transition: ease 0.3s;
 }
 
 .menu-mobile {
@@ -80,7 +102,7 @@ ul {
     transition: ease 0.3s;
 }
 
-.menu-desktop__link:hover {
+.menu-desktop__link:hover, .header-page__link:hover {
     text-decoration: underline;
     color: var(--color-cian-light);
 }
@@ -208,6 +230,51 @@ ul {
     width: 3px;
     height: 160px;
     border-right: 3px solid var(--color-cian);
+}
+
+.todo-list {
+    width: 60%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--color-black);
+    box-shadow: -5px 12px 20px 5px var(--color-blue-dark);
+    transform: translateX(100%);
+    -o-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    transition: ease-in-out .3s;
+    z-index: 2;
+}
+
+.todo-list--active {
+    transform: translateX(0);
+    -o-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -moz-transform: translateX(0);
+}
+
+.todo-list__container {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    padding: 48px 2%;
+    position: relative;
+}
+
+.todo-list__btn-close {
+    width: 42px;
+    height: 42px;
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    cursor: pointer;
+    z-index: 1;
 }
 
 .pomo-explain {
@@ -343,6 +410,16 @@ ul {
     .credits, .dev {
         margin: 8px;
     }
+
+    .todo-list {
+        width: 80%;
+    }
+}
+
+@media (max-width: 678px) {
+    .todo-list {
+        width: 100%;
+    }
 }
 
 @media (max-width: 520px) {
@@ -430,7 +507,6 @@ ul {
     .app_btn--edit {
         width: 200px;
     }
-
     
     .app__btn {
         margin: 8px 0;
