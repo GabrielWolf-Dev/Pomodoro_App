@@ -46,6 +46,14 @@ ul {
     margin: 16px 0;
 }
 
+.line {
+    width: 60%;
+    margin: 48px auto;
+    box-shadow: 0 0 60px 5px var(--color-cian-light);
+    border-radius: 50%;
+    border: 2px solid var(--color-cian-light);
+}
+
 .header-page {
     width: 100%;
     padding: 24px 4%;
@@ -235,11 +243,15 @@ ul {
     max-width: 450px;
 }
 
+.important-explain-box {
+    padding: 0 4%;
+}
+
 .important-explain {
     width: 100%;
     max-width: 800px;
     margin: 48px auto;
-    padding: 24px 2%;
+    padding: 24px 0;
     background-color: var(--color-yellow);
     color: var(--color-black);
     border-radius: 12px;
@@ -249,6 +261,88 @@ ul {
 .important-explain__description {
     text-align: justify;
     padding: 0 4%;
+}
+
+.footer {
+    width: 100%;
+    margin-top: 48px;
+    padding: 8px 8%;
+    background-color: var(--color-blue-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dev__subcontent {
+    color: var(--color-white);
+    font-size: 1.25rem;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.credits {
+    text-align: right;
+}
+
+.dev__icon {
+    font-size: 2.25rem;
+    color: var(--color-white);
+    margin: 0 8px;
+    transition: all ease .3s;
+}
+
+.credits__link {
+    font-size: 1.25rem;
+    color: var(--color-white);
+    display: block;
+    margin: 16px 0;
+    transition: all ease .3s;
+}
+
+.dev__icon:hover, .credits__link:hover {
+    color: var(--color-cian-light);
+}
+
+@media (max-width: 1270px) {
+    :root {
+        font-size: 14px;
+    }
+
+    .pomo-explain {
+        justify-content: center;
+    }
+
+    .pomo-explain__content > .title, .pomo-technique__content > .title {
+        text-align: center;
+    }
+
+    .pomo-technique > .container {
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+
+    .pomo-explain__img {
+        display: none;
+    }
+
+    .pomo-technique__img {
+        margin-bottom: 32px;
+    }
+}
+
+@media (max-width: 820px) {
+    .line {
+        width: 80%;
+    }
+
+    .footer {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .credits, .dev {
+        margin: 8px;
+    }
 }
 
 @media (max-width: 520px) {
@@ -352,6 +446,20 @@ ul {
         border-top: 3px solid var(--color-cian);
         margin: 24px 0;
     }
+
+    .important-explain {
+        padding: 8px 0;
+    }
+
+    .dev, .credits {
+        text-align: center;
+    }
+
+    .dev__subcontent {
+        display: block;
+        margin-bottom: 16px;
+        margin-right: 0;
+    } 
 }
 
 @media (max-width: 420px) {
