@@ -314,6 +314,9 @@ ul {
     height: 42px;
     border-radius: 0 12px 12px 0 ;
     background-color: var(--color-cian-dark);
+    background-image: url(../assets/svg/add.svg);
+    background-repeat: no-repeat;
+    background-position: center;
     color: var(--color-white);
     font-size: 1.625rem;
     border: 0;
@@ -387,15 +390,21 @@ ul {
     cursor: pointer;
     color: var(--color-white);
     font-size: 1.25rem;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.todo-list__btn-check {
     background-color: var(--color-green);
+    background-image: url(../assets/svg/check.svg);
 }
 
 .todo-list__btn-trash {
     background-color: var(--color-red);
     border-radius: 0 12px 12px 0;
+    background-image: url(../assets/svg/delete.svg);
 }
 
-/*Check style*/
 .todo-list__list-item--completed {
     opacity: 0.5;
     text-decoration: line-through;
