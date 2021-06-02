@@ -35,7 +35,7 @@
     </header><!--header-page-->
 
     <main id="Timer" class="app container">
-        <button class="app__btn app_btn--edit">
+        <button class="app__btn app_btn--edit" aria-label="Abrir bloco de notas" aria-expanded="false" aria-haspopup="true" aria-controls="todoList" >
             Bloco de notas
             <img src="./assets/svg/edit.svg" alt="Editar" />
         </button><!--app__btn-->
@@ -82,8 +82,8 @@
         </form><!--input-timer-->
     </main><!--app-->
 
-    <section class="todo-list">
-        <button class="todo-list__btn-close">
+    <section role="tooltip" class="todo-list" id="todoList">
+        <button class="todo-list__btn-close" aria-label="Fechar Bloco de notas" aria-expanded="true" aria-haspopup="true" aria-controls="todoList">
             <img src="./assets/svg/close.svg" alt="Fechar" />
         </button><!--todo-list__btn-close-->
         <div class="todo-list__container">
