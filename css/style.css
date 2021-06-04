@@ -72,6 +72,28 @@ ul {
     opacity: 1;
 }
 
+.invalidInputs {
+    width: 100%;
+    max-width: 300px;
+    padding: 16px 2%;
+    border-radius: 12px;
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    font-size: 18px;
+    position: fixed;
+    top: 80px;
+    left: 16px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.8s linear, opacity 0.5s linear;
+    z-index: 1;
+}
+
+.invalidInputs--active {
+    visibility: visible;
+    opacity: 1;
+}
+
 .header-page {
     width: 100%;
     padding: 24px 4%;
@@ -156,6 +178,10 @@ ul {
     color: var(--color-white);
     font-size: 1.75rem;
     border: 0;
+}
+
+.app_btn--hide {
+    display: none;
 }
 
 .app__coutdown {
@@ -559,6 +585,15 @@ ul {
 }
 
 @media (max-width: 678px) {
+    .invalidInputs {
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+    }
+
     .todo-list {
         width: 100%;
     }

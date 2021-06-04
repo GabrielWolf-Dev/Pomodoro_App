@@ -11,6 +11,7 @@
 </head>
 <body>
     <div class="bg-black"></div><!--bg-black-->
+    <div class="invalidInputs"></div><!--invalidTemp-->
 
     <header class="header-page">
         <div class="container">
@@ -42,44 +43,48 @@
 
         <div class="app__timer">
             <main class="app_timer__box">
-                <h3 class="app__sections">Sessão 1</h3>
-                <span class="app__coutdown">29:35</span>
-                <button class="app__btn">
+                <h3 class="app__sections">Sessão <span id="session">1</span></h3>
+                <span class="app__coutdown"></span>
+                <button id="startBtn" class="app__btn">
                     <img src="./assets/svg/play.svg" alt="Começar" />
                     Começar
                 </button>
-                <button class="app__btn">
+                <button id="pauseBtn" class="app__btn app_btn--hide">
+                    <img src="./assets/svg/pause.svg" alt="Pausar" />
+                    Pausar
+                </button>
+                <button id="resetBtn" class="app__btn">
                     <img src="./assets/svg/replay.svg" alt="Recomeçar" />
                     Resetar
                 </button>
             </main><!--app_timer__box-->
         </div><!--app__timer-->
 
-        <form class="input-timer">
-            <fieldset class="input-timer__box">
+        <aside id="formInputs" class="input-timer">
+            <div class="input-timer__box">
                 <button class="input-timer__btn"><img src="./assets/svg/arrow_circle_up.svg" alt="Aumentar tempo"/></button>
     
                 <div class="input-timer__box-input">
                     <label for="timer">Tempo:</label>
-                    <input class="input-timer__input" id="timer" type="text" placeholder="Tempo" />
+                    <input class="input-timer__input" id="tempInput" type="text" placeholder="Tempo" />
                 </div><!--input-timer__box-input-->
 
                 <button class="input-timer__btn"><img src="./assets/svg/arrow_circle_down.svg" alt="Diminuir tempo"/></button>
-            </fieldset><!--input-timer__box-->
+            </div><!--input-timer__box-->
             
             <div class="input-timer__line"></div><!--input-timer__line-->
 
-            <fieldset class="input-timer__box">
+            <div class="input-timer__box">
                 <button class="input-timer__btn"><img src="./assets/svg/arrow_circle_up.svg" alt="Aumentar tempo"/></button>
 
                 <div class="input-timer__box-input">
                     <label for="setions">Sessão:</label>
-                    <input class="input-timer__input" id="setions" type="text" placeholder="Sessão" />
+                    <input class="input-timer__input" id="sessionInput" type="text" placeholder="Sessão" />
                 </div><!--input-timer__box-input-->
 
                 <button class="input-timer__btn"><img src="./assets/svg/arrow_circle_down.svg" alt="Diminuir tempo"/></button>
-            </fieldset><!--input-timer__box-->
-        </form><!--input-timer-->
+            </div><!--input-timer__box-->
+        </aside><!--input-timer-->
     </main><!--app-->
 
     <section role="tooltip" class="todo-list" id="todoList">
