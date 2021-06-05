@@ -12,6 +12,7 @@
 <body>
     <div class="bg-black"></div><!--bg-black-->
     <div class="invalidInputs"></div><!--invalidTemp-->
+    <div class="correctInputs"></div><!--correctInputs-->
 
     <header class="header-page">
         <div class="container">
@@ -43,7 +44,7 @@
 
         <div class="app__timer">
             <main class="app_timer__box">
-                <h3 class="app__sections">Sessão <span id="session">1</span></h3>
+                <h3 class="app__sections">Sessão <span id="session"></span></h3>
                 <span class="app__coutdown"></span>
                 <button id="startBtn" class="app__btn">
                     <img src="./assets/svg/play.svg" alt="Começar" />
@@ -60,13 +61,13 @@
             </main><!--app_timer__box-->
         </div><!--app__timer-->
 
-        <aside id="formInputs" class="input-timer">
+        <aside class="input-timer">
             <div class="input-timer__box">
                 <button class="input-timer__btn"><img src="./assets/svg/arrow_circle_up.svg" alt="Aumentar tempo"/></button>
     
                 <div class="input-timer__box-input">
                     <label for="timer">Tempo:</label>
-                    <input class="input-timer__input" id="tempInput" type="text" placeholder="Tempo" />
+                    <input class="input-timer__input" id="tempInput" value="25" type="text" placeholder="Tempo" />
                 </div><!--input-timer__box-input-->
 
                 <button class="input-timer__btn"><img src="./assets/svg/arrow_circle_down.svg" alt="Diminuir tempo"/></button>
@@ -79,7 +80,7 @@
 
                 <div class="input-timer__box-input">
                     <label for="setions">Sessão:</label>
-                    <input class="input-timer__input" id="sessionInput" type="text" placeholder="Sessão" />
+                    <input class="input-timer__input" id="sessionInput" value="1" type="text" placeholder="Sessão" />
                 </div><!--input-timer__box-input-->
 
                 <button class="input-timer__btn"><img src="./assets/svg/arrow_circle_down.svg" alt="Diminuir tempo"/></button>

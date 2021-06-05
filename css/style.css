@@ -72,7 +72,7 @@ ul {
     opacity: 1;
 }
 
-.invalidInputs {
+.invalidInputs, .correctInputs {
     width: 100%;
     max-width: 300px;
     padding: 16px 2%;
@@ -89,7 +89,12 @@ ul {
     z-index: 1;
 }
 
-.invalidInputs--active {
+.correctInputs {
+    background-color: var(--color-green);
+    color: var(--color-white);
+}
+
+.invalidInputs--active, .correctInputs--active {
     visibility: visible;
     opacity: 1;
 }
@@ -240,6 +245,7 @@ ul {
     background-color: transparent;
     border: 3px solid var(--color-cian);
     text-align: center;
+    color: var(--color-white);
 }
 
 .input-timer__input::placeholder {
@@ -585,7 +591,7 @@ ul {
 }
 
 @media (max-width: 678px) {
-    .invalidInputs {
+    .invalidInputs, .correctInputs {
         left: 50%;
         transform: translateX(-50%);
         -webkit-transform: translateX(-50%);
