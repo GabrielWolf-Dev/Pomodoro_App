@@ -72,6 +72,10 @@ ul {
     opacity: 1;
 }
 
+.notification-sound {
+    display: none;
+}
+
 .invalidInputs, .correctInputs {
     width: 100%;
     max-width: 300px;

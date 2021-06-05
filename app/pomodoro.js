@@ -8,12 +8,14 @@ export default function pomodoro() {
     const tempInput = $('#tempInput');
     const sessionInput = $('#sessionInput');
     const currentSession = $('#session');
+    const notificationSound = $('.notification-sound');
 
     let coutdownInterval;
     let coutdown;
     let minutes = Number(tempInput.value);
     let seconds = 0;
     let sessions = 1;
+    
 
     // Default temp:
     timer.textContent = '25:00';
@@ -28,6 +30,7 @@ export default function pomodoro() {
 
     // Functions
     function start() {
+        let contentNotification = `Iniciando o intervalo da sessão ${sessions}.`;
         startBtn.classList.add('app_btn--hide');
         pauseBtn.classList.remove('app_btn--hide');
         clearInterval(coutdown);
@@ -41,33 +44,35 @@ export default function pomodoro() {
                     seconds = 59;
                 } else {
                     clearInterval(coutdown);
-                    startInterval();
                     minutes = Number(tempInput.value);
-                    // Ativar a notificação.
+                    notificationSound.play();
+                    notification(contentNotification);
+                    startInterval();
                 }
             }
         
-            timer.textContent = `${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds  : seconds}`;
+            timer.textContent = `${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
         }, 10);
     }
 
     function startInterval() {
         let minutesInterval = 5;
         let secondsInterval = 0;
+        let contentNotification = `Finalizando o intervalo da sessão ${sessions}.`;
     
         coutdownInterval = setInterval(() => {
             timer.textContent = `${minutesInterval < 10 ? '0' + minutesInterval : minutesInterval}:${secondsInterval < 10 ? '0' + secondsInterval  : secondsInterval}`;
+            
             secondsInterval--;
-
                 if(secondsInterval <= 0) {
                     if(minutesInterval > 0) {
                         minutesInterval--;
                         secondsInterval = 59;
                     }else if(sessions < Number(sessionInput.value)){
-                        start();
                         sessions++;
                         currentSession.textContent = sessions;
-                        // Ativar a notificação.
+                        start();
+                        notification(contentNotification);
                     } else {
                         pause();
                         reset();
@@ -134,6 +139,17 @@ export default function pomodoro() {
         correctInput.textContent = message;
         correctInput.classList.add('correctInputs--active');
         setTimeout(() => correctInput.classList.remove('correctInputs--active'), 6000);
+    }
+
+    function notification(content){
+        if(Notification.permission === 'granted') {
+            new Notification('Pomodoro App', {
+                body: content,
+                icon: '../favicon.ico',
+                lang: 'pt-BR',
+                vibrate: [200, 100, 200],
+            });
+        }
     }
 
 }

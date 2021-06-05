@@ -9,12 +9,7 @@ export default function todo() {
     const filterOption = $('.todo-list__select');
 
     // Validation LocalStorage datas:
-    let todos;
-    if(localStorage.getItem('todos') === null){
-        todos = [];
-    }else {
-        todos = JSON.parse(localStorage.getItem('todos'));
-    }
+    let todos = localStorage.getItem('todos') === null ? [] : JSON.parse(localStorage.getItem('todos'));
     
     // EventListeners:
     document.addEventListener('DOMContentLoaded', getTodo());
