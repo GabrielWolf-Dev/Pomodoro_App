@@ -10,13 +10,15 @@ window.onload = () => {
     showTodo();
     todo();
     pomodoro();
-    notifyMe();
-}
 
-function notifyMe() {
-    if (window.Notification && Notification.permission !== 'denied') {
-        Notification.requestPermission();
-    } else if(!window.Notification){
+    if(!window.Notification){
         alert("Este browser não suporta notificações de Desktop");
+    } else if (Notification.permission !== "denied") {
+        Notification.requestPermission()
+        .then(permission => {
+          if(permission === "granted") {
+            console.log("Permissão para notificações: " + permission)
+          }  
+        });
     }
-  }
+}

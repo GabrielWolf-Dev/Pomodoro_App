@@ -49,15 +49,15 @@
                 <h3 class="app__sections">Sessão <span id="session"></span></h3>
                 <span class="app__coutdown"></span>
                 <button id="startBtn" class="app__btn">
-                    <img src="./assets/svg/play.svg" alt="Começar" />
+                    <img class="app__btn__icon" src="./assets/svg/play.svg" alt="Começar" />
                     Começar
                 </button>
                 <button id="pauseBtn" class="app__btn app_btn--hide">
-                    <img src="./assets/svg/pause.svg" alt="Pausar" />
+                    <img class="app__btn__icon" src="./assets/svg/pause.svg" alt="Pausar" />
                     Pausar
                 </button>
                 <button id="resetBtn" class="app__btn">
-                    <img src="./assets/svg/replay.svg" alt="Recomeçar" />
+                    <img class="app__btn__icon" src="./assets/svg/replay.svg" alt="Recomeçar" />
                     Resetar
                 </button>
             </main><!--app_timer__box-->
@@ -65,27 +65,27 @@
 
         <aside class="input-timer">
             <div class="input-timer__box">
-                <button class="input-timer__btn"><img src="./assets/svg/arrow_circle_up.svg" alt="Aumentar tempo"/></button>
+                <button id="inc" class="input-timer__btn"><img src="./assets/svg/arrow_circle_up.svg" alt="Aumentar tempo"/></button>
     
                 <div class="input-timer__box-input">
                     <label for="timer">Tempo:</label>
                     <input class="input-timer__input" id="tempInput" value="25" type="text" placeholder="Tempo" />
                 </div><!--input-timer__box-input-->
 
-                <button class="input-timer__btn"><img src="./assets/svg/arrow_circle_down.svg" alt="Diminuir tempo"/></button>
+                <button id="dec" class="input-timer__btn"><img src="./assets/svg/arrow_circle_down.svg" alt="Diminuir tempo"/></button>
             </div><!--input-timer__box-->
             
             <div class="input-timer__line"></div><!--input-timer__line-->
 
             <div class="input-timer__box">
-                <button class="input-timer__btn"><img src="./assets/svg/arrow_circle_up.svg" alt="Aumentar tempo"/></button>
+                <button id="inc" class="input-timer__btn"><img src="./assets/svg/arrow_circle_up.svg" alt="Adicionar sessões"/></button>
 
                 <div class="input-timer__box-input">
                     <label for="setions">Sessão:</label>
                     <input class="input-timer__input" id="sessionInput" value="1" type="text" placeholder="Sessão" />
                 </div><!--input-timer__box-input-->
 
-                <button class="input-timer__btn"><img src="./assets/svg/arrow_circle_down.svg" alt="Diminuir tempo"/></button>
+                <button id="dec" class="input-timer__btn"><img src="./assets/svg/arrow_circle_down.svg" alt="Subtrair sessões"/></button>
             </div><!--input-timer__box-->
         </aside><!--input-timer-->
     </main><!--app-->
@@ -172,14 +172,10 @@
             </a><!--dev__icon-->
         </div><!--dev-->
 
-        <div class="credits">
-            <a class="credits__link" target="_blank" href="https://undraw.co/">Ilustrações de Undraw</a>
-            <a class="credits__link" target="_blank" href="https://fontawesome.com/">Ícones de Font Awesome</a>
-            <a class="credits__link" target="_blank" href="https://fonts.google.com/icons?selected=Material+Icons">Ícones de Material Icons</a>
-            <a class="credits__link" target="_blank" href="https://pixabay.com/pt/users/bytrangle-6596164/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2838141">Imagem de Trang Le por Pixabay </a>
-        </div><!--credits-->
+        <a class="footer__link" href="credits.html">Créditos</a>
     </footer><!--footer-->
 
+    <script src="./app/libs/all.min.js"></script>
     <script type="module" src="./app/index.js"></script>
 </body>
 </html>
