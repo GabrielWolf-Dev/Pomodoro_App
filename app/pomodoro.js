@@ -129,19 +129,37 @@ export default function pomodoro() {
 
     // Helpers:
     function invalidInput(message) {
-        const invalidInput = $('.invalidInputs');
+        const invalidInput = $('.invalid-inputs');
 
         invalidInput.textContent = message;
-        invalidInput.classList.add('invalidInputs--active');
-        setTimeout(() => invalidInput.classList.remove('invalidInputs--active'), 6000);
+        invalidInput.classList.add('invalid-inputs--active');
+        ariaPopUp(invalidInput, 'display');
+        setTimeout(() => {
+            invalidInput.classList.remove('invalid-inputs--active');
+            ariaPopUp(invalidInput, 'hidden');
+        }, 6000);
     }
 
     function correctInput(message) {
-        const correctInput = $('.correctInputs');
+        const correctInput = $('.correct-inputs');
 
         correctInput.textContent = message;
-        correctInput.classList.add('correctInputs--active');
-        setTimeout(() => correctInput.classList.remove('correctInputs--active'), 6000);
+        correctInput.classList.add('correct-inputs--active');
+        ariaPopUp(correctInput, 'display');
+        setTimeout(() => {
+            correctInput.classList.remove('correct-inputs--active');
+            ariaPopUp(correctInput, 'hidden');
+        }, 6000);
+    }
+
+    function ariaPopUp(element, state) {
+        if(state === 'display'){
+            element.ariaModal = true;
+            element.ariaExpanded = true;
+        } else {
+            element.ariaModal = false;
+            element.ariaExpanded = false;
+        }
     }
 
     function increment(e) {

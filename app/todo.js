@@ -28,10 +28,10 @@ export default function todo() {
     // Create Todo Item:
     function makeTodos() {
         list.innerHTML += `
-            <div class="todo-list__list-item">
+            <div aria-label="Tarefa do Todo List" class="todo-list__list-item">
                 <li class="todo-list__list-text">${inputTodo.value}</li>
-                <button class="todo-list__btn-check"></button><!--todo-list__btn-check-->
-                <button class="todo-list__btn-trash"></button><!--todo-list__btn-trash-->
+                <button aria-checked="false" aria-label="Concluir tarefa" class="todo-list__btn-check"></button><!--todo-list__btn-check-->
+                <button aria-label="Excluir tarefa" class="todo-list__btn-trash"></button><!--todo-list__btn-trash-->
             </div><!--todo-list__list-item-->
         `;
     }
@@ -57,8 +57,11 @@ export default function todo() {
 
     function check(e){
         const itemTodo = e.target.parentElement;
-
+        console.log(e.target.ariaChecked);
         itemTodo.classList.toggle('todo-list__list-item--completed');
+        itemTodo.classList.contains('todo-list__list-item--completed') 
+        ? e.target.ariaChecked = true 
+        : e.target.ariaChecked = false;
     }
 
     function deleteTodo(e) {

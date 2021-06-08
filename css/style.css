@@ -76,7 +76,7 @@ ul {
     display: none;
 }
 
-.invalidInputs, .correctInputs {
+.invalid-inputs, .correct-inputs {
     width: 100%;
     max-width: 300px;
     padding: 16px 2%;
@@ -93,12 +93,12 @@ ul {
     z-index: 1;
 }
 
-.correctInputs {
+.correct-inputs {
     background-color: var(--color-green);
     color: var(--color-white);
 }
 
-.invalidInputs--active, .correctInputs--active {
+.invalid-inputs--active, .correct-inputs--active {
     visibility: visible;
     opacity: 1;
 }
@@ -120,6 +120,10 @@ ul {
     font-size: 20px;
     color: var(--color-white);
     transition: ease 0.3s;
+}
+
+.header-page__link {
+    text-decoration: none;
 }
 
 .menu-mobile {
@@ -632,7 +636,7 @@ ul {
 }
 
 @media (max-width: 678px) {
-    .invalidInputs, .correctInputs {
+    .invalid-inputs, .correct-inputs {
         left: 50%;
         transform: translateX(-50%);
         -webkit-transform: translateX(-50%);

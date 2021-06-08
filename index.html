@@ -11,10 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="bg-black"></div><!--bg-black-->
-    <div class="invalidInputs"></div><!--invalidTemp-->
-    <div class="correctInputs"></div><!--correctInputs-->
     <audio src="./assets/sounds/phoneNotification.mp3" class="notification-sound"></audio>
+    <div class="bg-black"></div><!--bg-black-->
+    <div role="alertdialog" aria-modal="false" aria-haspopup="dialog" aria-expanded="false" id="invalidInputs" class="invalid-inputs"></div><!--invalidTemp-->
+    <div role="dialog" aria-modal="false" aria-haspopup="dialog" aria-expanded="false" id="correctInputs" class="correct-inputs"></div><!--correctInputs-->
 
     <header class="header-page">
         <div class="container">
@@ -28,7 +28,7 @@
             </nav><!--menu-desktop-->
 
             <nav class="menu-mobile">
-                <button id="btnMenu" aria-label="Abrir Menu" aria-haspopup="true" aria-expanded="false" aria-controls="menu" class="menu-mobile__btn"></button><!--menu-mobile__btn-->
+                <button id="btnMenu" aria-label="Abrir Menu" aria-haspopup="menu" aria-expanded="false" aria-controls="menu" class="menu-mobile__btn"></button><!--menu-mobile__btn-->
                 <ul id="menu" role="menu" class="menu-mobile__menu">
                     <li class="menu-mobile__space-links"><a class="link" href="#Timer">Timer</a></li>
                     <li class="menu-mobile__space-links"><a class="link" href="#About">Sobre</a></li>
@@ -65,45 +65,46 @@
 
         <aside class="input-timer">
             <div class="input-timer__box">
-                <button id="inc" class="input-timer__btn"><img src="./assets/svg/arrow_circle_up.svg" alt="Aumentar tempo"/></button>
+                <button id="inc" aria-label="Aumentar tempo" class="input-timer__btn"><img src="./assets/svg/arrow_circle_up.svg" alt="Aumentar tempo"/></button>
+                
     
                 <div class="input-timer__box-input">
                     <label for="timer">Tempo:</label>
-                    <input class="input-timer__input" id="tempInput" value="25" type="text" placeholder="Tempo" />
+                    <input aria-controls="invalidInputs" class="input-timer__input" id="tempInput" value="25" type="text" placeholder="Tempo" />
                 </div><!--input-timer__box-input-->
 
-                <button id="dec" class="input-timer__btn"><img src="./assets/svg/arrow_circle_down.svg" alt="Diminuir tempo"/></button>
+                <button id="dec" aria-label="Diminuir tempo" class="input-timer__btn"><img src="./assets/svg/arrow_circle_down.svg" alt="Diminuir tempo"/></button>
             </div><!--input-timer__box-->
             
             <div class="input-timer__line"></div><!--input-timer__line-->
 
             <div class="input-timer__box">
-                <button id="inc" class="input-timer__btn"><img src="./assets/svg/arrow_circle_up.svg" alt="Adicionar sessões"/></button>
+                <button id="inc" aria-label="Adicionar sessões" class="input-timer__btn"><img src="./assets/svg/arrow_circle_up.svg" alt="Adicionar sessões"/></button>
 
                 <div class="input-timer__box-input">
                     <label for="setions">Sessão:</label>
-                    <input class="input-timer__input" id="sessionInput" value="1" type="text" placeholder="Sessão" />
+                    <input aria-controls="correctInputs" class="input-timer__input" id="sessionInput" value="1" type="text" placeholder="Sessão" />
                 </div><!--input-timer__box-input-->
 
-                <button id="dec" class="input-timer__btn"><img src="./assets/svg/arrow_circle_down.svg" alt="Subtrair sessões"/></button>
+                <button id="dec" aria-label="Diminuir sessões" class="input-timer__btn"><img src="./assets/svg/arrow_circle_down.svg" alt="Diminuir sessões"/></button>
             </div><!--input-timer__box-->
         </aside><!--input-timer-->
     </main><!--app-->
 
-    <section role="tooltip" class="todo-list" id="todoList">
-        <button class="todo-list__btn-close" aria-label="Fechar Bloco de notas" aria-expanded="true" aria-haspopup="true" aria-controls="todoList">
+    <section role="tooltip" class="todo-list" id="todoList" >
+        <button class="todo-list__btn-close" aria-expanded="false" aria-haspopup="true" aria-label="Fechar Bloco de notas" aria-controls="todoList">
             <img src="./assets/svg/close.svg" alt="Fechar" />
         </button><!--todo-list__btn-close-->
         <div class="todo-list__container">
             <form class="todo-list__form">
                 <fieldset class="todo-list__box-input">
                     <input class="todo-list__input" placeholder="Adicionar Tarefa" type="text">
-                    <button class="todo-list__btn-add"></button>
+                    <button aria-label="Adicionar tarefa" class="todo-list__btn-add"></button>
                 </fieldset><!--todo-list__box-input-->
 
                 <fieldset class="todo-list__box-input">
                     <div class="todo-list__select-box">
-                        <select class="todo-list__select" name="todos">
+                        <select class="todo-list__select" aria-label="Filtrar tarefas" name="todos">
                             <option value="all">Todos</option>
                             <option value="completed">Completos</option>
                             <option value="uncompleted">Incompletos</option>

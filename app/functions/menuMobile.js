@@ -10,10 +10,12 @@ export default function menuMobile() {
         menu.classList.toggle('menu-mobile__menu--active');
 
         event.currentTarget.setAttribute('aria-expended', activeMenu);
-        if(activeMenu) {
+        if(!activeMenu) {
             event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+            btnMenu.ariaExpanded = true;
         } else {
             event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+            btnMenu.ariaExpanded = false;
         }
     });
 }
