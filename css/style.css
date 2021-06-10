@@ -406,8 +406,8 @@ ul {
 .todo-list__list {
     width: 100%;
     max-width: 450px;
-    margin: 48px auto;
-    max-height: 650px;
+    margin: 0 auto;
+    max-height: 70vh;
     overflow: auto;
 }
 
@@ -644,6 +644,10 @@ ul {
     .todo-list__list {
         max-width: 350px;
     }
+
+    .todo-list__list {
+        max-height: 60vh;
+    }
 }
 
 @media (max-width: 678px) {
@@ -835,7 +839,11 @@ ul {
     .credits {
         max-width: 300px;
         height: 300px;
-    } 
+    }
+
+    .todo-list__list {
+        max-height: 50vh;
+    }
 }
 
 @media (max-width: 378px) {
