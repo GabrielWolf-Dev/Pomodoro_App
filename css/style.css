@@ -405,12 +405,23 @@ ul {
 
 .todo-list__list {
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     margin: 48px auto;
+    max-height: 650px;
+    overflow: auto;
+}
+
+.todo-list__list::-webkit-scrollbar {
+    width: 12px;
+}
+
+.todo-list__list::-webkit-scrollbar-thumb {
+    background-color: var(--color-blue-dark);
+    border-radius: 12px;
 }
 
 .todo-list__list-item {
-    width: 100%;
+    width: 90%;
     height: 42px;
     border-radius: 12px;
     background-color: var(--color-cian);
