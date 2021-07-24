@@ -27,25 +27,25 @@ export default function todo() {
 
     // Create Todo Item:
     function makeTodos() {
-        list.innerHTML += `
+        list.insertAdjacentHTML('beforeend',  `
             <div aria-label="Tarefa do Todo List" class="todo-list__list-item">
                 <li class="todo-list__list-text">${inputTodo.value}</li>
-                <button aria-checked="false" aria-label="Concluir tarefa" class="todo-list__btn-check"></button><!--todo-list__btn-check-->
+                <button aria-checked="false" aria-label="Concluir tarefa" class="todo-list__btn-check"></   button><!--todo-list__btn-check-->
                 <button aria-label="Excluir tarefa" class="todo-list__btn-trash"></button><!--todo-list__btn-trash-->
             </div><!--todo-list__list-item-->
-        `;
+        `);
     }
 
     // Helpers:
     function getTodo() {
         todos.forEach(todoText => {
-            list.innerHTML += `
+            list.insertAdjacentHTML('beforeend', `
                 <div class="todo-list__list-item">
                     <li class="todo-list__list-text">${todoText}</li>
                     <button class="todo-list__btn-check"></button><!--todo-list__btn-check-->
                     <button class="todo-list__btn-trash"></button><!--todo-list__btn-trash-->
                 </div><!--todo-list__list-item-->
-            `;
+            `);
         });
         btnListeners();
     }
