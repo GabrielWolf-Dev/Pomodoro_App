@@ -15,6 +15,7 @@ In my routine, I need something that make more productivity in my day for study 
 * HTML5 semantic;
 * CSS3 (BEM);
 * Vanilla JavaScript;
+* [Webpack](https://webpack.js.org/);
 * [Font Awesome](https://fontawesome.com/);
 * Figma for [UI Design](https://www.figma.com/).
 
