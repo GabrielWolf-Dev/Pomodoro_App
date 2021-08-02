@@ -3,6 +3,7 @@ import smoothScroll from './functions/smoothScroll.js';
 import showTodo from './functions/showTodo.js';
 import todo from './todo.js';
 import pomodoro from './pomodoro.js';
+import '../css/style.css';
 
 window.onload = () => {
     menuMobile();
